@@ -1,38 +1,368 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#body {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, lightgreen, lightblue, lightgreen, lightblue, greenyellow);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.the {
+  font-size: 30px;
+  transform: translateZ(10px);
+  transform: rotateZ(270deg);
+  display: inline-block;
+  margin-right: 8px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.siren {
+  font-weight: bold;
+  font-size: 60px;
+  position: relative;
+  top: 8px;
+}
+#menu{
+  display:none;
+}
+#header {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(233, 230, 230);
+  background: linear-gradient(150deg, lightcyan, lightseagreen, lightblue, lightgreen);
+  box-shadow: 3px 1px 1px 10px rgb(133, 130, 130);
+  margin-bottom: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: +10;
+}
+
+#header-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  background-color: rgb(226, 223, 223);
+  padding: 15px;
+  background: linear-gradient(300deg, lightcyan, lightseagreen, lightblue, lightgreen);
+  box-shadow: 3px 1px 1px 3px rgb(194, 191, 191);
+  z-index: +10;
+}
+
+#header-text {
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+#decNone {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#decNone:hover {
+  border-radius: 10px;
+  font-weight: bold;
+  border: 1px solid rgb(177, 174, 174);
+  background: linear-gradient(150deg, lightcyan, lightseagreen, lightblue, lightgreen);
+}
+
+#Right-Side {
+  position: absolute;
+  top: 10em;
+  right: 20px;
+  width: 35%;
+}
+
+/* #home-Header{
+  display: flex;
+  flex-direction: column;
+} */
+#container {
+  margin: 20px;
+  margin-top: 10em;
+  padding-top: 20px;
+}
+
+#Title {
+  padding: 10px;
+  font-size: 26px;
+  font-weight: 600;
+  border-bottom: 2px solid red;
+}
+
+#box {
+  margin-top: 35px;
+}
+
+#parent {
+  display: flex;
+  border: 1px solid gray;
+  width: 60%;
+}
+
+#parent:hover {
+  box-shadow: 5px 7px 20px 2px rgb(8, 8, 8);
+}
+
+#top-Parent:hover {
+  box-shadow: 5px 7px 20px 2px rgb(8, 8, 8);
+}
+
+#content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.miniTitle1 {
+  font-size: 22px;
+  font-weight: 600;
+  height: 30px;
+  overflow: hidden;
+}
+
+.miniParagraph1 {
+  font-size: 17px;
+  height: 70px;
+  overflow: hidden;
+}
+
+.Traval1 {
+  font-size: 16px;
+  color: rgb(107, 104, 104);
+}
+
+#Title {
+  animation: animate 500ms ease-in-out alternate-reverse;
+}
+
+@keyframes animate {
+  0% {
+    transform: translateX(0px)
+  }
+
+  100% {
+    transform: translateX(500px)
+  }
+}
+
+#title-Fold {
+  animation: color 5s linear infinite;
+}
+
+@keyframes color {
+  0% {
+    color: red;
+    border-radius: 20px;
+    transform: translateX(10px);
+    transform: rotateX(90deg);
+  }
+
+  25% {
+    color: black;
+    border-radius: 40px;
+    transform: translateX(0px);
+  }
+
+  50% {
+    color: green;
+    border-radius: 20px;
+    transform: translateX(-10px);
+  }
+
+  75% {
+    color: black;
+    border-radius: 40px;
+    transform: translateX(0px);
+  }
+
+  100% {
+    color: red;
+    border-radius: 20px;
+    transform: translateX(10px);
+  }
+}
+
+#top-Post {
+  width: 495px;
+  position: absolute;
+  top: 10em;
+  right: 0;
+}
+
+#addBox {
+  width: 470px;
+  height: 60em;
+  border: 3px solid black;
+  margin-top: 40px;
+  animation: ads 200ms linear infinite alternate;
+}
+
+@keyframes ads {
+  0% {
+    background: linear-gradient(30deg, rgb(243, 121, 100), lightgreen, lightblue, pink, tomato, lightgreen, lightblue, pink);
+  }
+
+  20% {
+    background: linear-gradient(60deg, tomato, lightgreen, lightblue, pink, tomato, lightgreen, lightblue, pink);
+  }
+
+  40% {
+    background: linear-gradient(120deg, rgb(223, 139, 125), lightgreen, lightblue, pink, rgb(224, 114, 95), lightgreen, lightblue, pink);
+  }
+
+  60% {
+    background: linear-gradient(180deg, rgb(199, 121, 107), lightgreen, lightblue, pink, rgb(187, 100, 85), lightgreen, lightblue, pink);
+  }
+
+  80% {
+    background: linear-gradient(210deg, rgb(202, 118, 103), lightgreen, lightblue, pink, tomato, lightgreen, lightblue, pink);
+  }
+
+  100% {
+    background: linear-gradient(320deg, rgb(187, 115, 102), lightgreen, lightblue, pink, rgb(155, 106, 98), lightgreen, lightblue, pink);
+  }
+}
+
+#addBox h2 {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin-top: 80%;
 }
 
-.App-link {
-  color: #61dafb;
+#Right-Main {
+  position: absolute;
+  top: 75em;
+  right: 20px;
+  width: 500px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width:400px) {
+  #header-nav{
+    display:none;
   }
-  to {
-    transform: rotate(360deg);
+
+  #addBox {
+    display: none;
   }
-}
+
+  #two {
+    display: none;
+  }
+
+  #three {
+    display: none;
+  }
+  #one {
+    position: relative;
+    right: 36px;
+    width: 385px;
+    height: 250px;
+    border-radius: none;
+  }
+  #body{
+    background: none;
+  }
+  .the {
+    font-size: 20px;
+    transform: translateZ(10px);
+    transform: rotateZ(270deg);
+    display: inline-block;
+    position: relative;
+    right: 28%;
+    top: 2px;
+  }
+  #menu{
+    display:inline-block;
+    position: relative;
+    left: 50px;
+    font-weight: 600;
+  }
+  
+  .siren {
+    font-weight: bold;
+    font-size: 40px;
+    position: relative;
+    top: 8px;
+    right: 30%;
+  }
+  #container-Right{
+    position:absolute;
+    top: 100em;
+    left: 30%;
+    width: 360px;
+  }
+  #end{
+    position: relative;
+    top: 75em;
+  }
+  #top-Parent img{
+    width: 320px;
+  }
+  #container{
+    position: relative;
+    bottom: 50px;
+  }
+  #parent {
+    display: flex;
+    border: 1px solid gray;
+    width: 100%;
+    height: 100px;
+  }
+  .img1{
+    width: 140px;
+    height: 100%;
+  }
+  .miniTitle1{
+    height: 22px;
+    font-size: 15px;
+    font-weight: 600;
+  }
+  .miniParagraph1{
+    height: 23px;
+    font-size: 14px;
+  }
+  /*Bollywood Page*/
+  #Right-Side {
+    position:absolute;
+    top: 40px;
+    right: 265px;
+    width: 40%;
+  }
+  #title-Fold{
+    font-size: 16px;
+  }
+  #detais-img{
+    width: 370px;
+    height: 300px;
+    position: relative;
+    right: 15px;
+  }
+  #details-content{
+    width: 100px;
+    position: relative;
+    top: 10px;
+    right: 70px;
+    font-size: 13px;
+  }
+} 
