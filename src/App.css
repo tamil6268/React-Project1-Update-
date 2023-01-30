@@ -273,7 +273,7 @@
   #three {
     display: none;
   }
-  #one {
+  #one #img2 img{
     position: relative;
     right: 36px;
     width: 385px;

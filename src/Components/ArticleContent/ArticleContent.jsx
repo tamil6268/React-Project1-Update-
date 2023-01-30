@@ -8,13 +8,12 @@ function ArticleContent() {
     };
     return (
         <div id="Pic">
-            <div>
+            <div id="one">
                 {data.map((item) => {
                     return (
-                        <div key={item.id}>
+                        <div id="img2" key={item.id}>
                             <img
-                                id="one"
-                                className="img1"
+                                className="img2"
                                 onClick={() => handleNavigation(item.id, item)}
                                 src={item.url}
                                 alt={"404_Error Check your Connection please...."}
