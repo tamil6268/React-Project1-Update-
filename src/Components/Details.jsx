@@ -8,7 +8,7 @@ const BollywoodDetails = () => {
   const location = useLocation();
   useEffect(() => {
     async function getBollywoodDetails() {
-      const response = await fetch(`https://v1/images/${params.Id}`, {
+      const response = await fetch(`https://thumbs.dreamstime.com/b/images/${params.Id}`, {
         method: "GET",
       });
       const data = await response.json();
@@ -44,7 +44,7 @@ const BollywoodDetails = () => {
         <br />
 
         <img id="detais-img" style={{ border: "3px solid black" }} src={item.url} width={700} height={500} alt={"404_Error"} />
-        <div id="details-content" style={{ width: "700px", textAlign: "left", marginLeft: "24%", fontSize: "16px", fontWeight: 600 }}>{item.content}{item.content}<br />{item.content}<br />{item.content}<br /><br />{item.content}{item.content}{item.content}<br /><br />{item.content}</div>
+        <div id="details-content">{item.content}{item.content}<br />{item.content}<br />{item.content}<br /><br />{item.content}{item.content}{item.content}<br /><br />{item.content}</div>
 
         <div id="author">
           <div style={{ display: "flex" }}>
