@@ -1,11 +1,24 @@
 import '../Components/BlogPost/BlogPost.style.css'
-import { data1 } from "../Utility/ApicallerHead";
+import {useState,useEffect} from 'react';
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 const Pic=()=>{
 const navigate = useNavigate();
     const handleNavigation = (id, item) => {// two arg - 1. pathname - 2. state
         navigate(`/bollywood/${id}`, { state: { item } });
     };
+    const [data1,setData1]=useState([]);
+    useEffect(()=>{
+        axios
+            .get('http://localhost:3008/home/singlepic')
+            .then((response)=>{
+                setData1(response.data);
+                console.log("Pic ",response.data)
+            })
+            .catch((error)=>{
+                setData1(error);
+            })
+    },[])
     return(
         <div>
             <div id="img1">

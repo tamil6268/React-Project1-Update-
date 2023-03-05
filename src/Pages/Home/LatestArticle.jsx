@@ -1,11 +1,23 @@
-import { data } from "../../Components/TopPost-Data/API-DATA/Home";
+// import { data } from "../../Components/TopPost-Data/API-DATA/Home";
+import {useState,useEffect} from 'react';
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 const LatestArticle = (props) => {
     const navigate = useNavigate();
     const handleNavigation = (id, item) => {// two arg - 1. pathname - 2. state
         navigate(`/Bollywood/${id}`, { state: { item } });
     };
-
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+       axios
+           .get('http://localhost:3008/home/topPost')
+           .then((response)=>{
+               setData(response.data);
+           })
+           .catch((error)=>{
+               setData(error);
+           })
+    },[])
     return (
         <div id="container"style={{marginTop:"0px"}}>
             <span id="Title">{props.Title}</span>
@@ -31,7 +43,6 @@ const LatestArticle = (props) => {
                     </div>
                 );
             })}
-            <div>Load More...</div>
         </div>
     );
 };
