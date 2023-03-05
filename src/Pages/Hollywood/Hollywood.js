@@ -1,4 +1,6 @@
-import { data } from "../../API-DATA/HollywoodApi";
+// import { data } from "../../API-DATA/HollywoodApi";
+import {useState,useEffect} from 'react';
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import HollywoodTopPost from '../../Components/TopPost-Data/Holywood'
 import Ads from '../../Common/Ads'
@@ -8,6 +10,17 @@ const Hollywood = (props) => {
         navigate(`/Hollywood/${id}`, { state: { item } });
     };
 
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+       axios
+           .get('http://localhost:3008/hollywood')
+           .then((response)=>{
+              setData(response.data);
+           })
+           .catch((error)=>{
+            setData(error);
+           })
+    },[])
     return (
         <div>
             <div id="container">

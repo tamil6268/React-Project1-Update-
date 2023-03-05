@@ -1,4 +1,6 @@
-import { data } from "../../API-DATA/FoodApi";
+// import { data } from "../../API-DATA/FoodApi";
+import {useState,useEffect} from 'react';
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import FoodTopPost from '../../Components/TopPost-Data/Food'
 import Ads from '../../Common/Ads'
@@ -7,7 +9,17 @@ const Food = (props) => {
     const handleNavigation = (id, item) => {// two arg - 1. pathname - 2. state
         navigate(`/Food/${id}`, { state: { item } });
     };
-
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+        axios
+            .get('http://localhost:3008/food')
+            .then((response)=>{
+                setData(response.data)
+            })
+            .catch((error)=>{
+                setData(error)
+            })
+    },[])
     return (
         <div>
             <div id="container">

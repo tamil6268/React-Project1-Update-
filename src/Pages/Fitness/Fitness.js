@@ -1,4 +1,6 @@
-import { data } from "../../API-DATA/FitnessApi";
+// import { data } from "../../API-DATA/FitnessApi";
+import {useState,useEffect} from 'react';
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 import FitnessTopPost from '../../Components/TopPost-Data/FitnessApi'
 import Ads from '../../Common/Ads'
@@ -7,7 +9,18 @@ const Fitness = (props) => {
     const handleNavigation = (id, item) => {// two arg - 1. pathname - 2. state
         navigate(`/Fitness/${id}`, { state: { item } });
     };
-
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+        axios
+             .get('http://localhost:3008/fitness')
+             .then((response)=>{
+                setData(response.data)
+                console.log("Fitness",response.data)
+             })
+             .catch((error)=>{
+                setData(error);
+             })
+    },[])
     return (
         <div>
             <div id="container">

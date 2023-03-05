@@ -1,10 +1,25 @@
-import { data } from "../TopPost-Data/API-DATA/FoodApi";
+// import { data } from "../TopPost-Data/API-DATA/FoodApi";
 import { useNavigate } from "react-router-dom";
+import {useState,useEffect} from 'react';
+import axios from 'axios';
 const Food = (props) => {
     const navigate = useNavigate();
     const handleNavigation = (id, item) => {// two arg - 1. pathname - 2. state
         navigate(`/Food/${id}`, { state: { item } });
     };
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+       axios
+           .get('http://localhost:3008/food/topPost')
+           .then((response)=>{
+              setTimeout(()=>{
+                setData(response.data);
+              },200)
+           })
+           .catch((error)=>{
+            setData(error);
+           })
+    },[])
     return (
         <div id="container-Right">
             <div id="Title">Top Post</div>

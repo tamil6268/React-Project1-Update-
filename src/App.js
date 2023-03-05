@@ -4,6 +4,7 @@ function App() {
   return (
     <div id="body">
       <RouterComponent />
+      {console.log("Hello world")}
     </div>
   );
 }

@@ -1,12 +1,29 @@
-import { data } from "../../API-DATA/BollywoodApi";
+// import { data } from "../../API-DATA/BollywoodApi";
 import { useNavigate } from "react-router-dom";
 import BollywoodTopPost from '../../Components/TopPost-Data/Bollywood'
 import Ads from '../../Common/Ads'
+import {useEffect,useState} from 'react';
+import axios from 'axios';
+
 const Bollywood = (props) => {
     const navigate = useNavigate();
     const handleNavigation = (id, item) => {// two arg - 1. pathname - 2. state
         navigate(`/bollywood/${id}`, { state: { item } });
     };
+    
+    const [data,setData]=useState([]);
+    console.log("Data",data)
+    useEffect(()=>{
+       axios
+            .get('http://localhost:3008/bollywood')
+            .then((response)=>{
+                setData(response.data);
+                console.log(response.data);
+            })
+            .catch((error)=>{
+                setData("404_ERROR Page Data Not-Found",error)
+            })
+    },[])
 
     return (
         <section>
@@ -34,7 +51,6 @@ const Bollywood = (props) => {
                             </div>
                         );
                     })}
-                    <span>Load More....</span>
                 </div>
             </div>
             <div id="Right-Side">

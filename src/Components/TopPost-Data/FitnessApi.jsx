@@ -1,10 +1,25 @@
-import { data } from "../../Components/TopPost-Data/API-DATA/FitnessApi";
+// import { data } from "../../Components/TopPost-Data/API-DATA/FitnessApi";
+import {useState,useEffect} from 'react';
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 const Fitness = (props) => {
     const navigate = useNavigate();
     const handleNavigation = (id, item) => {// two arg - 1. pathname - 2. state
         navigate(`/bollywood/${id}`, { state: { item } });
     };
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+       axios
+           .get('http://localhost:3008/fitness/topPost')
+           .then((response)=>{
+              setTimeout(()=>{
+                setData(response.data);
+              },200)
+           })
+           .catch((error)=>{
+            setData(error);
+           })
+    },[])
     return (
         <div id="container-Right">
             <div id="Title">Top Post</div>

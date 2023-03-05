@@ -1,10 +1,26 @@
-import { data } from "../TopPost-Data/API-DATA/BollywoodApi";
+// import { data } from "../TopPost-Data/API-DATA/BollywoodApi";
+import {useState,useEffect} from 'react';
+import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 const Bollywood = (props) => {
     const navigate = useNavigate();
     const handleNavigation = (id, item) => {// two arg - 1. pathname - 2. state
         navigate(`/bollywood/${id}`, { state: { item } });
     };
+    const [data,setData]=useState([]);
+    useEffect(()=>{
+       axios
+           .get('http://localhost:3008/bollywood/topPost')
+           .then((response)=>{
+              setTimeout(()=>{
+                setData(response.data);
+              },200)
+           })
+           .catch((error)=>{
+            setData(error);
+           })
+    },[])
+
     return (
         <div id="container-Right">
             <div id="Title">Top Post</div>
