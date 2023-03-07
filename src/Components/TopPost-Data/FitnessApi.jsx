@@ -10,7 +10,7 @@ const Fitness = (props) => {
     const [data,setData]=useState([]);
     useEffect(()=>{
        axios
-           .get('http://localhost:3008/fitness/topPost')
+           .get('https://heisenberg-tamil.onrender.com/fitness/topPost')
            .then((response)=>{
               setTimeout(()=>{
                 setData(response.data);
