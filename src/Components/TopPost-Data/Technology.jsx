@@ -10,7 +10,7 @@ const Technology = (props) => {
     const [data,setData]=useState([]);
     useEffect(()=>{
        axios
-           .get('http://localhost:3008/technology/topPost')
+           .get('https://heisenberg-tamil.onrender.com/technology/topPost')
            .then((response)=>{
               setTimeout(()=>{
                 setData(response.data);
