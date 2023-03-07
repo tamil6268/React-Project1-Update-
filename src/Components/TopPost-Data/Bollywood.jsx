@@ -10,7 +10,7 @@ const Bollywood = (props) => {
     const [data,setData]=useState([]);
     useEffect(()=>{
        axios
-           .get('http://localhost:3008/bollywood/topPost')
+           .get('https://heisenberg-tamil.onrender.com/bollywood/topPost')
            .then((response)=>{
               setTimeout(()=>{
                 setData(response.data);
