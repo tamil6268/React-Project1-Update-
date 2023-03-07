@@ -10,7 +10,7 @@ const TopPost = (props) => {
     const [data,setData]=useState([]);
     useEffect(()=>{
         axios
-            .get('http://localhost:3008/home/topPost/limit=4')
+            .get('https://heisenberg-tamil.onrender.com/home/topPost/limit=4')
             .then((response)=>{
                 setData(response.data);
             })
