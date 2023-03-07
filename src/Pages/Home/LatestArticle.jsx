@@ -10,7 +10,7 @@ const LatestArticle = (props) => {
     const [data,setData]=useState([]);
     useEffect(()=>{
        axios
-           .get('http://localhost:3008/home/topPost')
+           .get('https://heisenberg-tamil.onrender.com/home/topPost')
            .then((response)=>{
                setData(response.data);
            })
