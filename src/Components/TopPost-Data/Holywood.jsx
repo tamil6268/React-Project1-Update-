@@ -10,7 +10,7 @@ const Hollywood = (props) => {
     const [data,setData]=useState([]);
     useEffect(()=>{
        axios
-           .get('http://localhost:3008/hollywood/topPost')
+           .get('https://heisenberg-tamil.onrender.com/hollywood/topPost')
            .then((response)=>{
                setData(response.data);
            })
