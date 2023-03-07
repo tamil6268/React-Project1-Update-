@@ -15,7 +15,7 @@ const Bollywood = (props) => {
     console.log("Data",data)
     useEffect(()=>{
        axios
-            .get('http://localhost:3008/bollywood')
+            .get('https://heisenberg-tamil.onrender.com/bollywood')
             .then((response)=>{
                 setData(response.data);
                 console.log(response.data);
