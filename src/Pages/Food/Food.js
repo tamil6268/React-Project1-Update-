@@ -12,7 +12,7 @@ const Food = (props) => {
     const [data,setData]=useState([]);
     useEffect(()=>{
         axios
-            .get('http://localhost:3008/food')
+            .get('https://heisenberg-tamil.onrender.com/food')
             .then((response)=>{
                 setData(response.data)
             })
