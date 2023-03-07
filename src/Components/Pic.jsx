@@ -10,7 +10,7 @@ const navigate = useNavigate();
     const [data1,setData1]=useState([]);
     useEffect(()=>{
         axios
-            .get('http://localhost:3008/home/singlepic')
+            .get('https://heisenberg-tamil.onrender.com/home/singlepic')
             .then((response)=>{
                 setData1(response.data);
                 console.log("Pic ",response.data)
