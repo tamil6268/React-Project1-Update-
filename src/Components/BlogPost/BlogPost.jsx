@@ -18,7 +18,7 @@ function BlogPost(props) {
   const [data2, setData2] = useState([]);
   console.log("Blogpost",data2)
   useEffect(() => {
-    axios.get("http://localhost:3008/blogPost").then((response) => {
+    axios.get("https://heisenberg-tamil.onrender.com/blogPost").then((response) => {
       setData(response.data[0]);
       setData1(response.data[1]);
       setData2(response.data[2]);
