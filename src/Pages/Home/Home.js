@@ -1,3 +1,4 @@
+import './Header.css';
 import TopPost from '../../Components/TopPost-Data/API-DATA/TopPost'
 import LatestArticle from './LatestArticle';
 import ArticleContent from '../../Components/ArticleContent/ArticleContent'
