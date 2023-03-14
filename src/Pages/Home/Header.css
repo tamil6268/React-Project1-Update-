@@ -1,3 +1,8 @@
+#mediaTop {
+    position:relative;
+    bottom:10px;
+    }
+
 #Pic {
     margin-top: 10em;
     display: grid;
